@@ -2,16 +2,7 @@ version: "3.6"
 services:
   dev:
     build: .
-    links:
-      - network
+    tty: true
     volumes:
-      - ./src:/src
-
-  network:
-    build: .
-    command: ["truffle", "develop"]
-    ports: 
-      - 9545
-    volumes:
-      - ./src:/src
+      - .:/src
 
